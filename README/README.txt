@@ -71,3 +71,35 @@ References
 
 The Potter’s House Christian Fellowship Church (2026) Our History. Available at: 
 https://www.prescottpottershouse.com/about (Accessed: 13 August 2026).
+
+Added CSS style.CSS
+
+Added the margin, padding and box-sizing (default style code)
+added root viarables, the colours etc..
+added Typography styles like font family and background color
+added container
+added h1, h2, h3
+added navbar
+added header
+added menu
+added navigation like more navbar
+added the hero 
+added the hero background image which didn't work I dont know why
+added the buttons
+added cards
+added sections
+added grid and cards for about, services, sermons
+added social media h2, p, links 
+Added contact grid, info,
+Edited the Hero on the index HTML page
+Added Div on contact, services on HTML
+Added grid on contact, services on HTML
+Added map container
+added form group
+added page banner
+added location card
+added lacation grid
+Added enquiry
+added footer grid 
+
+
