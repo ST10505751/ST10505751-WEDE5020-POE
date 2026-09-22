@@ -1,0 +1,1392 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Keeps padding and borders inside the element's size */
+}
+
+
+/* =========================================================
+   2. ROOT VARIABLES
+   These are reusable colour names.
+   Change the colour here and it changes throughout the website.
+   ========================================================= */
+
+:root {
+    --primary-color: #17213A;
+    --secondary-color: #E4DCD1;
+    --white: #FFFFFF;
+    --grey: #737373;
+    --medium-grey: #DDDDDD;
+    --dark-text: #121212;
+    --black: #111111;
+    --red: #be3e2e;
+    --light-grey: #f5f5f5; 
+}
+
+
+/* =========================================================
+   3. BASE STYLES
+   These styles apply to the whole website.
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth; /* Makes movement to sections smoother */
+}
+
+
+body {
+    font-family: Trebuchet, Arial, sans-serif; /* Main website font */
+    font-size: 1rem; /* Normal text size */
+    line-height: 1.6; /* Adds space between lines of text */
+    color: #121212; /* Main text colour */
+    background-color: #E4DCD1; /* Website background colour */
+}
+
+
+img {
+    max-width: 100%; /* Prevents images from becoming wider than their container */
+    height: auto; /* Keeps the image's original proportions */
+    display: block;
+}
+
+
+a {
+    color: inherit; /* Uses the colour of the surrounding element */
+    text-decoration: none; /* Removes the default underline */
+}
+
+
+ul {
+    list-style: none; /* Removes bullet points from lists */
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit; /* Makes form elements use the website font */
+}
+
+
+/* =========================================================
+   4. CONTAINER
+   Keeps the website content at a comfortable width
+   and centres it on the page.
+   ========================================================= */
+
+.container {
+    width: 90%; /* Uses 90% of the available screen width */
+    max-width: 1200px; /* Stops content from becoming too wide */
+    margin: 0 auto; /* Centres the container */
+}
+
+
+/* =========================================================
+   5. TYPOGRAPHY
+   Controls the appearance of headings and normal text.
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+    line-height: 1.8;
+    font-weight: 700; /* Makes headings bold */
+}
+
+
+h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.5px; /* Adds a small amount of space between letters */
+}
+
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Controls the size and appearance of navigation links */
+.navbar a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   6. HEADER
+   Controls the top section of the website.
+   ========================================================= */
+
+.site-header {
+   background-color: var(--primary-color);
+   color: var(--grey);
+   padding: 2% 0; /* Adds space above and below the header */
+}
+
+
+.header-container {
+    display: flex; /* Places items next to each other */
+    justify-content: space-between; /* Puts space between the logo and navigation */
+    align-items: center; /* Vertically centres the items */
+    gap: 2rem; /* Adds space between items */
+    flex-wrap: wrap;
+}
+
+
+.logo {
+    color: var(--red);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.logo span {
+    color: var(--secondary-color);
+}
+.menu{
+    width: 100px;
+    float: none;
+    height:auto;
+}
+ul{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin: 0;
+    padding: 0; 
+}
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px; 
+}
+
+ul li a{
+    text-decoration: none;
+    color: #17213A;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color:#be3e2e;
+}
+/* =========================================================
+   7. NAVIGATION
+   Flexbox is used to arrange the navigation links.
+   ========================================================= */
+
+.navbar ul {
+    display: flex; /* Places navigation items in a row */
+    justify-content: flex-end; /* Moves navigation towards the right */
+    align-items: center; /* Vertically centres the links */
+    gap: 2.5rem; /* Adds space between navigation links */
+}
+
+
+.navbar a {
+    font-size: 1.2rem;   /* Changed from 3rem */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: var(--white);
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* Hover = what happens when the mouse is placed over a link */
+
+.navbar a:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+
+/* Focus = what appears when a user selects the link
+   using a keyboard */
+
+:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+
+/* Shows which page is currently active */
+
+.navbar a.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   8. HERO SECTION
+   The large main section at the top of the homepage.
+   ========================================================= */
+
+.hero {
+    min-height: 200px;
+
+    /* Adds a dark overlay over the background image.
+       This makes the white text easier to read. */
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("images/Ps Riaan Botha.jpeg");
+        background-size: cover;
+        background-position: center; 
+        min-height: 400px;
+
+    background-size: cover; /* Makes the image cover the whole section */
+    background-position: center; /* Keeps the image centred */
+    background-repeat: no-repeat; /* Stops the image from repeating */
+
+    display: flex; /* Allows the hero content to be positioned easily */
+    justify-content: center; /* Centres content horizontally */
+    align-items: center; /* Centres content vertically */
+
+    text-align: center;
+    color: var(--white);
+    padding: 4rem 1rem;
+}
+
+
+.hero-content {
+    max-width: 800px; /* Prevents the text from becoming too wide */
+}
+
+
+.hero h1 {
+    color: var(--white);
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.hero p {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   9. BUTTONS
+   Creates the main button style used on the website.
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+
+    background-color: var(--secondary-color);
+    color: var(--black);
+
+    padding: 0.8rem 1.5rem;
+
+    border: 2px solid var(--medium-grey);
+    border-radius: 5px; /* Slightly rounds the corners */
+
+    font-weight: 700;
+    cursor: pointer; /* Changes the mouse into a pointer */
+
+    transition: 0.3s ease; /* Makes hover effects smoother */
+}
+
+
+/* Changes the button when the mouse is placed over it */
+
+.btn:hover {
+    background-color: var(--grey);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+
+/* Adds a visible outline when the button is selected */
+
+.btn:focus {
+    outline: 3px solid rgba(201, 162, 39, 0.5);
+    outline-offset: 3px;
+}
+
+
+/* Secondary button style */
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   10. GENERAL SECTIONS
+   Controls spacing around the main sections of the website.
+   ========================================================= */
+
+.section {
+    padding: 4rem 0; /* Adds space above and below sections */
+}
+
+
+.section-light {
+    background-color: var(--grey);
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+
+.section-heading p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   11. CSS GRID
+   Creates columns for cards and website content.
+   ========================================================= */
+
+.content-grid {
+    display: grid;
+
+    /* Creates 3 equal columns on larger screens */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem; /* Space between the columns */
+}
+
+
+/* =========================================================
+   12. CARDS
+   Controls the appearance of content cards.
+   ========================================================= */
+
+.card {
+    background-color: var(--white);
+
+    border: 1px solid var(--medium-grey);
+    border-radius: 8px;
+
+    padding: 1.5rem;
+
+    /* Adds a soft shadow underneath the card */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    /* Makes movement and shadow changes smoother */
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Moves the card slightly upwards when the mouse is over it */
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
+}
+
+
+/* =========================================================
+   14. ABOUT SECTION
+   Creates a two-column layout for text and images.
+   ========================================================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 3rem;
+    align-items: center; /* Vertically centres the content */
+}
+
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   15. SERVICES SECTION
+   Creates a grid for service cards.
+   ========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 2rem;
+}
+
+
+.services-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+
+.services-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.service h3 {
+    margin-top: 1rem;
+}
+
+
+/* Controls the size of an icon used in a service card */
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   16. SERMONS SECTION
+   Controls the sermon cards and YouTube links.
+   ========================================================= */
+
+.sermons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three sermon cards per row */
+    gap: 2rem;
+}
+
+
+.sermon-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden; /* Keeps content inside the rounded corners */
+
+    border: 1px solid var(--medium-grey);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+
+.sermon-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.sermon-card img {
+    width: 100%;
+    height: 500px;
+
+    /* Keeps images neatly fitted inside the set size */
+
+    object-fit: cover;
+}
+
+
+.sermon-content {
+    padding: 2.5rem;
+}
+
+
+.sermon-content h3 {
+    margin-bottom: 0.75rem;
+}
+
+
+.youtube-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+
+    color: var(--primary-color);
+    font-weight: 700;
+
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+
+.youtube-link:hover {
+    color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   17. EVENTS SECTION
+   Creates two columns for events on larger screens.
+   ========================================================= */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 2rem;
+}
+
+
+.event-card {
+    background-color: var(--light-grey);
+
+    border-left: 5px solid var(--secondary-color);
+
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+
+.event-date {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* =========================================================
+   18. SOCIAL MEDIA SECTION
+   Styles the Facebook, Instagram, YouTube, etc. links.
+   ========================================================= */
+
+.social-media {
+    text-align: center;
+
+    background-color: var(--primary-color);
+    color: var(--white);
+
+    padding: 3rem 1rem;
+}
+
+
+.social-media h2 {
+    color: var(--white);
+}
+
+
+.social-media p {
+    color: var(--white);
+}
+
+
+/* Flexbox places the social media links neatly in a row */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    /* Allows links to move to another line if needed */
+
+    flex-wrap: wrap;
+
+    margin-top: 1.5rem;
+}
+
+
+.social-links a {
+    display: inline-block;
+
+    background-color: var(--white);
+    color: var(--primary-color);
+
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+    color: var(--black);
+}
+
+
+.social-links a:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   19. CONTACT SECTION
+   Creates two columns for contact information and other content.
+   ========================================================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 3rem;
+}
+
+
+.contact-info {
+    background-color: var(--light-grey);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+}
+
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+}
+
+
+.contact-info a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   20. MAP
+   Controls the size and appearance of embedded maps.
+   ========================================================= */
+
+.map-container {
+    width: 100%;
+    min-height: 350px;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--medium-grey);
+}
+
+
+.map-container iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+
+/* =========================================================
+   21. FORMS
+   Used for the Enquiry and Contact pages.
+   ========================================================= */
+
+.form-container {
+    max-width: 800px;
+
+    margin: 0 auto; /* Centres the form */
+
+    background-color: var(--light-grey);
+
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+
+.form-group label {
+    display: block; /* Places the label on its own line */
+
+    font-weight: 700;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--primary-color);
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%; /* Makes the fields use the available width */
+
+    padding: 0.8rem;
+
+    border: 1px solid var(--medium-grey);
+    border-radius: 5px;
+
+    background-color: var(--white);
+    color: var(--dark-text);
+}
+
+
+/* Changes the form field when the user clicks inside it */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+
+    border-color: var(--secondary-color);
+
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+}
+
+
+.form-group textarea {
+    min-height: 150px;
+
+    /* Allows the user to make the text box taller */
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   22. RADIO BUTTONS AND CHECKBOXES
+   Controls the layout of form options.
+   ========================================================= */
+
+.form-options {
+    display: flex;
+
+    /* Allows options to move onto another line */
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+}
+
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+/* =========================================================
+   23. PAGE BANNER
+   Used on About, Services, Sermons, Events,
+   Enquiry and Contact pages.
+   ========================================================= */
+
+.page-banner {
+    background-color: var(--primary-color);
+    color: var(--white);
+
+    padding: 4rem 1rem;
+
+    text-align: center;
+}
+
+
+.page-banner h1 {
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+
+.page-banner p {
+    color: var(--white);
+
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   24. TWO-LOCATION CONTACT AREA
+   Creates two columns for the church locations.
+   ========================================================= */
+
+.locations-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2rem;
+}
+
+
+.location-card {
+    padding: 2rem;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--medium-grey);
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.location-card h3 {
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   25. GALLERY
+   Creates a grid for church/gallery images.
+   ========================================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+
+.gallery-grid img {
+    width: 100%;
+
+    height: 250px;
+
+    /* Crops the image neatly without stretching it */
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Slightly enlarges the image when the mouse is over it */
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   26. CALL TO ACTION SECTION
+   This is used for important actions such as
+   visiting the church or making an enquiry.
+   ========================================================= */
+
+.cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 4rem 1rem;
+}
+
+
+.cta h2 {
+    color: var(--white);
+}
+
+
+.cta p {
+    max-width: 700px;
+
+    margin: 0 auto 1.5rem;
+}
+
+
+/* =========================================================
+   27. FOOTER
+   Controls the bottom section of the website.
+   ========================================================= */
+
+.site-footer {
+    background-color: var(--black);
+    color: var(--white);
+
+    padding: 2.5rem 0;
+}
+
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+}
+
+
+.site-footer h3 {
+    color: var(--secondary-color);
+
+    margin-bottom: 1rem;
+}
+
+
+.site-footer p {
+    color: var(--white);
+}
+
+
+.site-footer a {
+    color: var(--white);
+}
+
+
+.site-footer a:hover {
+    color: var(--secondary-color);
+}
+
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid #444;
+
+    margin-top: 2rem;
+
+    padding-top: 1.5rem;
+
+    text-align: center;
+}
+
+
+.footer-bottom p {
+    margin-bottom: 0;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   28. TABLET RESPONSIVE DESIGN
+   These styles apply when the screen is 900px wide or smaller.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Header */
+
+    .header-container {
+        flex-direction: column; /* Stacks the header items */
+        text-align: center;
+    }
+
+
+    .navbar ul {
+        justify-content: center;
+
+        flex-wrap: wrap; /* Allows links to move to another line */
+
+        gap: 1rem;
+    }
+
+
+    /* Typography */
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 450px;
+    }
+
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+
+    /* Grid */
+
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr); /* Changes from 3 columns to 2 */
+    }
+
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .sermons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* About */
+
+    .about-content {
+        grid-template-columns: 1fr; /* Changes to one column */
+    }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Locations */
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   29. MOBILE RESPONSIVE DESIGN
+   These styles apply to screens 600px and below.
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Container */
+
+    .container {
+        width: 92%;
+    }
+
+
+    /* Typography */
+
+    body {
+        font-size: 0.95rem;
+    }
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+
+    /* Header */
+
+    .site-header {
+        padding: 1rem 0;
+    }
+
+
+    .header-container {
+        gap: 1rem;
+    }
+
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+
+    /* Mobile navigation */
+
+    .navbar ul {
+        flex-direction: column; /* Changes navigation from a row to a column */
+
+        gap: 0.5rem;
+    }
+
+
+    .navbar a {
+        display: block;
+
+        padding: 0.4rem 0;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 420px;
+
+        padding: 3rem 1rem;
+    }
+
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 3rem 0;
+    }
+
+
+    /* One-column layouts */
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sermons-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    /* Cards */
+
+    .card {
+        padding: 1.25rem;
+    }
+
+
+    /* Images */
+
+    .card img,
+    .sermon-card img {
+        height: 200px;
+    }
+
+
+    .gallery-grid img {
+        height: 220px;
+    }
+
+
+    /* Forms */
+
+    .form-container {
+        padding: 1.25rem;
+    }
+
+
+    /* Social links */
+
+    .social-links {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .social-links a {
+        width: 100%;
+
+        max-width: 250px;
+
+        text-align: center;
+    }
+
+
+    /* Buttons */
+
+    .btn {
+        width: 100%;
+
+        max-width: 280px;
+
+        text-align: center;
+    }
+
+
+    /* Page banner */
+
+    .page-banner {
+        padding: 3rem 1rem;
+    }
+}
+
+
+/* =========================================================
+   30. RESPONSIVE IMAGE SUPPORT
+   Makes images automatically fit smaller screens.
+   ========================================================= */
+
+/*
+   max-width: 100% prevents an image from overflowing
+   outside its container.
+
+   The HTML <picture> and srcset features can also be used
+   when different image sizes are needed for different devices.
+*/
+
+img {
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   31. ACCESSIBILITY
+   Makes selected elements easier to see when using
+   a keyboard instead of a mouse.
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid var(--secondary-color);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   32. REDUCED MOTION
+   Reduces animations for users who prefer less movement.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        /* Removes animations and transitions */
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
+
+
+/* =========================================================
+   33. PRINT STYLES
+   Changes the website when someone prints the page.
+   Navigation, footer and buttons are hidden when printing.
+   ========================================================= */
+
+@media print {
+
+    .site-header,
+    .site-footer,
+    .navbar,
+    .social-media,
+    .btn {
+        display: none;
+    }
+
+
+    body {
+        background-color: white;
+
+        color: black;
+    }
+
+
+    h1,
+    h2,
+    h3 {
+        color: black;
+    }
+}
+
+
+/* =========================================================
+   END OF STYLESHEET
+   ========================================================= */
