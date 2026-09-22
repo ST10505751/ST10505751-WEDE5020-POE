@@ -6,11 +6,11 @@
 }
 
 
-/* =========================================================
+/*
    2. ROOT VARIABLES
    These are reusable colour names.
    Change the colour here and it changes throughout the website.
-   ========================================================= */
+ */
 
 :root {
     --primary-color: #17213A;
@@ -85,7 +85,7 @@ select {
 
 /* =========================================================
    5. TYPOGRAPHY
-   Controls the appearance of headings and normal text.
+   Controls how headings apears and normal text.
    ========================================================= */
 
 h1,
