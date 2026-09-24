@@ -32,7 +32,7 @@ body {
     font-family: Trebuchet, Arial, sans-serif; /* Main website font */
     font-size: 1rem; /* Normal text size */
     line-height: 1.6; /* Adds space between lines of text */
-    color: #121212; /* Main text colour */
+    color: #111111; /* Main text colour */
     background-color: #E4DCD1; /* Website background colour */
 }
 
@@ -40,7 +40,7 @@ body {
 img {
     max-width: 100%; /* Prevents images from becoming wider than their container */
     height: auto; /* Keeps the image's original proportions */
-    display: block;
+   
 }
 
 
@@ -92,6 +92,7 @@ h1 {
 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 
@@ -99,7 +100,11 @@ h3 {
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
 }
-
+.highlight {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
 
 p {
     font-size: 1rem;
@@ -115,10 +120,7 @@ p {
 }
 
 
-/* =========================================================
-   6. HEADER
-   Controls the top section of the website.
-   ========================================================= */
+
 
 .site-header {
    background-color: var(--grey);
@@ -129,10 +131,10 @@ p {
 
 .header-container {
     display: flex; /* Places items next to each other */
-    justify-content: space-between; /* Puts space between the logo and navigation */
+    flex-direction: column; /* stack logo and nav vertically */
     align-items: center; /* Vertically centres the items */
-   
-    flex-wrap: wrap;
+    gap: 1rem;
+
 }
 
 
@@ -330,18 +332,24 @@ ul li a:hover{
 
 
 .section-heading {
-    text-align: center;
-    margin-bottom: 2.5rem;
+  text-align: center;       /* centers all text inside */
+  margin-bottom: 2.5rem;
 }
 
+
+.section img {
+  display: block;
+  margin: 1rem auto;        /* centers image horizontally */
+  max-width: 100%;          /* responsive scaling */
+  height: auto;
+}
 
 .section-heading p {
-    max-width: 700px;
-    margin: 0 auto;
+  width: 100%;              /* let text fill the frame */
+  max-width: 900px;         /* optional: keeps text readable on very wide screens */
+  margin: 0 auto;           /* centers the paragraph block */
+  line-height: 1.6;
 }
-
-
-
 
 .content-grid {
     display: grid;
@@ -770,7 +778,7 @@ ul li a:hover{
 
 .enquiry {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--secondary-color);
 
     text-align: center;
 
@@ -780,6 +788,8 @@ ul li a:hover{
 
 .enquiry h2 {
     color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
 
@@ -788,8 +798,18 @@ ul li a:hover{
 
     margin: 0 auto 1.5rem;
 }
+.enquiry-content {
+  max-width: 1000px;        /* keeps text readable */
+  margin: 0 auto;           /* centers block */
+}
 
-
+.enquiry-image {
+  display: block;
+  width: 100%;              /* fills the screen width */
+  height: auto;             /* keeps proportions */
+  border-radius: 8px;       /* optional: rounded corners */
+  margin: 1.5rem auto;      /* spacing above/below */
+}
 
 
 .site-footer {
@@ -858,289 +878,177 @@ ul li a:hover{
 
 @media (max-width: 900px) {
 
-    /* Header */
+  /* Header */
+  .header-container {
+    flex-direction: column; /* stack logo + nav */
+    text-align: center;
+    gap: 1rem;
+  }
 
-    .header-container {
-        flex-direction: column; /* Stacks the header items */
-        text-align: center;
-    }
+  .navbar ul {
+    justify-content: center;
+    flex-wrap: wrap; /* allow wrapping */
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
 
+  /* Typography */
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
 
-    .navbar ul {
-        justify-content: center;
+  /* Hero */
+  .hero {
+    min-height: 400px;
+    padding: 2.5rem 1rem;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
 
-        flex-wrap: wrap; /* Allows links to move to another line */
+  /* Grids collapse to 2 columns */
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sermons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-        gap: 1rem;
-    }
+  /* About page */
+  .about-content {
+    grid-template-columns: 1fr; /* single column */
+  }
 
+  /* Contact page */
+  .contact-grid {
+    grid-template-columns: 1fr; /* stack info + map */
+  }
 
-    /* Typography */
+  /* Locations (if used on Contact/About) */
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
 
-    h1 {
-        font-size: 2.4rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        min-height: 450px;
-    }
-
-
-    .hero h1 {
-        font-size: 2.6rem;
-    }
-
-
-    /* Grid */
-
-    .content-grid {
-        grid-template-columns: repeat(2, 1fr); /* Changes from 3 columns to 2 */
-    }
-
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    .sermons-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    
-
-
-    /* About */
-
-    .about-content {
-        grid-template-columns: 1fr; /* Changes to one column */
-    }
-
-
-    /* Contact */
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* Locations */
-
-    .locations-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* Footer */
-
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  /* Footer */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
 }
-
-
 
 
 @media (max-width: 600px) {
 
-    /* Container */
-
-    .container {
-        width: 92%;
-    }
-
-
-    /* Typography */
-
-    body {
-        font-size: 0.95rem;
-    }
-
-
-    h1 {
-        font-size: 2rem;
-    }
-
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-
-    /* Header */
-
-    .site-header {
-        padding: 1rem 0;
-    }
-
-
-    .header-container {
-        gap: 1rem;
-    }
-
-
-    .logo {
-        font-size: 1.3rem;
-    }
-
-
-    /* Mobile navigation */
-
-    .navbar ul {
-        flex-direction: column; /* Changes navigation from a row to a column */
-
-        gap: 0.5rem;
-    }
-
-
-    .navbar a {
-        display: block;
-
-        padding: 0.4rem 0;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        min-height: 420px;
-
-        padding: 3rem 1rem;
-    }
-
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-
-    /* Sections */
-
-    .section {
-        padding: 3rem 0;
-    }
-
-
-    /* One-column layouts */
-
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .sermons-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .events-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .locations-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .footer-container {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-
-    /* Cards */
-
-    .card {
-        padding: 1.25rem;
-    }
-
-
-    /* Images */
-
-    .card img,
-    .sermon-card img {
-        height: 200px;
-    }
-
-
-    .gallery-grid img {
-        height: 220px;
-    }
-
-
-    /* Forms */
-
-    .form-container {
-        padding: 1.25rem;
-    }
-
-
-    /* Social links */
-
-    .social-links {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-
-    .social-links a {
-        width: 100%;
-
-        max-width: 250px;
-
-        text-align: center;
-    }
-
-
-    /* Buttons */
-
-    .btn {
-        width: 100%;
-
-        max-width: 280px;
-
-        text-align: center;
-    }
-
-
-    /* Page banner */
-
-    .page-banner {
-        padding: 3rem 1rem;
-    }
+  /* Container */
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* Typography */
+  body { font-size: 0.95rem; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+
+  /* Header */
+  .site-header {
+    padding: 0.8rem 0;
+    text-align: center;
+  }
+  .header-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .logo { font-size: 1.2rem; }
+
+  /* Mobile navigation */
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar a {
+    display: block;
+    font-size: 1rem;
+    padding: 0.4rem 0;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 350px;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.95rem; }
+
+  /* Sections */
+  .section {
+    padding: 2rem 0;
+  }
+
+  /* One-column layouts */
+  .content-grid,
+  .services-grid,
+  .sermons-grid,
+  .contact-grid,
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Cards */
+  .card {
+    padding: 1rem;
+  }
+
+  /* Images */
+  .card img,
+  .sermon-card img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Forms */
+  .form-container {
+    padding: 1rem;
+  }
+
+  /* Social links */
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .social-links a {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  /* Page banner */
+  .page-banner {
+    padding: 2rem 1rem;
+  }
 }
-
 
 /* =========================================================
    30. RESPONSIVE IMAGE SUPPORT

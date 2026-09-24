@@ -100,6 +100,19 @@ added page banner
 added location card
 added lacation grid
 Added enquiry
+added tablet format
 added footer grid 
+added mobile format
+fixed the tablet format
+fixed the mobile format
+Fixed the menu and logo
+edited the sections on services
+edited the paragraphs on the HTML
+edited the enquiry, the picture, background and fonts on HTML and CSS
 
+references 
 
+The Potter’s House Christian Fellowship Church (2026) Our History. Available at: 
+https://www.prescottpottershouse.com/about (Accessed: 24 September 2026).
+
+W3Schools (n.d.) CSS=Styles and Colors. W3Schools. Available at: https://www.w3schools.com/html/html_css.asp (Accessed: 24 September 2026).
