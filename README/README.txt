@@ -116,3 +116,70 @@ The Potter’s House Christian Fellowship Church (2026) Our History. Available a
 https://www.prescottpottershouse.com/about (Accessed: 24 September 2026).
 
 W3Schools (n.d.) CSS=Styles and Colors. W3Schools. Available at: https://www.w3schools.com/html/html_css.asp (Accessed: 24 September 2026).
+
+Changelog
+
+part 3 
+added SEO page titles in all six pages
+added Robots.txt 
+added sitemap.xml
+Added the urls
+Added the FAQ
+Added coding in script.js 
+Added console log
+Added FAQQuestions
+Added if(answer.hidden)
+Added else(answer.hidde)
+Added the services times on the FAQ on html services
+added search feature
+Added the search service section using div by services
+added const serviceSearch = document.getElementById("serviceSearch");
+const searchMessage = document.getElementById("searchMessage");
+const serviceCards = document.querySelectorAll(".service-card");
+Added if (serviceSearch)
+Added if(searchMessage)
+added a contact form for emails
+added form in the contact.html
+added emquiry form 
+Added if (enquiryForm) 
+Added if (name.length < 2)
+Added if (!email || !email.includes("@")), if message, if contactForm
+Added  formMesssage
+Added the right google map link for the map in contact.html
+Fixed the map on CSS by map containers
+Added a gallary in about.html 
+Added the styling of the gallery in style.css. 
+I added .gallery-section 
+added gallery - section h2
+added gallery-section hhover
+added gallery grid
+added gallery image
+added image light box in about.html
+added lightbox on script.js
+Added const galleryImages 
+added const lightbox 
+added const lightboxImage 
+addeed const closeLightbox 
+added if statement
+Added galleryImages
+added closeLightbox
+added lightbox.addEventListener
+added .lightbox on style.css, added display, position, padding etc
+added.lightbox.active
+added.lightbox img 
+added.lightbox-close
+added.lightbox-close:hover
+added animation
+Added.fade-in, .fade-in.visible on style.css
+Added fadeElements and fadeObserver on script.js
+added latest event in index.html
+added eventContainers, if statements, const,in script.js
+added event card, event section, event grid on style.css
+
+references
+
+GreatStack (n.d.) HTML CSS and Javascript Website Design Tutorial – Beginner Project Fully Responsive [YouTube video]. Available at: https://youtu.be/FazgJVnrVuI  (Accessed: 2 November 2026).
+
+GreatStack (n.d.) How To Create A Website using HTML & CSS | Step-by-Step Tutorial [YouTube video]. Available at: https://youtu.be/CQZxeoQeo5c  (Accessed: 2 November 2026).
+
+Bro Code (n.d.) JavaScript Full Course for free [YouTube video]. Available at: https://youtu.be/lfmg-EJ8gm4  (Accessed: 2 November 2026).

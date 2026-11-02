@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Potter's House Melville | Services</title>
-<link rel="stylesheet" href="css/style.css"></head>
+    <meta name="description"
+    content="Discover The Potter's House Melville, a Christian church focused on sharing the Gospel, discipleship, prayer and fellowship.">
+
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -23,11 +29,19 @@
     </header>
 
     <main>
+<!-- Searching for Services -->
+             <div class="service-search">
+                <label for="serviceSearch">Search our services:</label>
+                <input type="search" id="serviceSearch" placeholder="Type to search...">
+                <p id="searchMessage" aria-live="polite"></p>
+            </div>
+            <!-- Ending the Search Services -->
 
         <section class="services-grid">
           <div class="service-card">
             <h2>Our Services and Activities</h2>
 
+            
             <img src="images/4e71d966-877e-40dd-9d7a-6c1899cbb7e6.JPG"width="550" height="300"
             alt="Picture of the service">
 
@@ -139,6 +153,42 @@
             </p>
             </div>
         </section>
+
+        <!-- Frequently Asked Questions -->
+         <section class="section faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our church.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"aria-expanded="false">
+                    What time are the church services?
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Sunday morning - 10:30am.</p>
+                    <p>Sunday evening - 17:00pm</p>
+                    <p>Wednesday evening - 19:00pm</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"aria-expanded="false">
+                    Can new visitors attend our services?
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Yes! You are welcome to join us for worship, fellowship and the Word of God.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                    How can I get involved in church activities?
+                </button>
+                <div class="faq-answer" hidden>
+                    <p>Please visit our Enquiry page to ask how you can participate in church activities and outreach.</p>
+                </div>
+            </div>
+        </section>
+        <!-- End Frequently Asked Questions -->
 
     </main>
 

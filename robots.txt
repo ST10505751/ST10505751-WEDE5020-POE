@@ -1,0 +1,3 @@
+User-agent:*
+Allow:/
+Sitemap: https://The-Potters-House-Melville-Church/Sitemap.xml
