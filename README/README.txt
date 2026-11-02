@@ -175,7 +175,7 @@ Added fadeElements and fadeObserver on script.js
 added latest event in index.html
 added eventContainers, if statements, const,in script.js
 added event card, event section, event grid on style.css
-
+fixed the index name
 references
 
 GreatStack (n.d.) HTML CSS and Javascript Website Design Tutorial – Beginner Project Fully Responsive [YouTube video]. Available at: https://youtu.be/FazgJVnrVuI  (Accessed: 2 November 2026).
